@@ -5,13 +5,50 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:pages="clr-namespace:Xamarin.CommunityToolkit.Sample.Pages"
     xmlns:views="clr-namespace:Xamarin.CommunityToolkit.UI.Views;assembly=Xamarin.CommunityToolkit">
-    <Grid BackgroundColor="red">
-        <views:CameraView
-            x:Name="cameraView"
-            BackgroundColor="Yellow"
-            CameraOptions="Front"
-            CaptureOptions="Video"
-            HeightRequest="100"
-            WidthRequest="100" />
-    </Grid>
+    <ScrollView>
+        <StackLayout>
+            <StackLayout.Resources>
+                <ResourceDictionary>
+                    <Style TargetType="Label">
+                        <Setter Property="FontAttributes" Value="Bold" />
+                        <Setter Property="FontSize" Value="Title" />
+                    </Style>
+                </ResourceDictionary>
+            </StackLayout.Resources>
+            <views:CameraView
+                x:Name="cameraView"
+                BackgroundColor="Yellow"
+                CameraOptions="Front"
+                CaptureOptions="Photo"
+                HeightRequest="480"
+                WidthRequest="640" />
+
+            <Label Text="Zoom" />
+            <Slider
+                x:Name="zoomSlider"
+                Maximum="10"
+                MaximumTrackColor="Red"
+                Minimum="1"
+                MinimumTrackColor="Red"
+                ValueChanged="zoomSlider_ValueChanged"
+                Value="1" />
+            <Label Text="Video" />
+            <Switch
+                x:Name="isPhoto"
+                IsToggled="False"
+                Toggled="isPhoto_Toggled" />
+            <Label Text="Flash" />
+            <Switch
+                x:Name="flash"
+                IsToggled="False"
+                Toggled="flash_Toggled" />
+
+
+            <Button
+                x:Name="buttonShot"
+                Clicked="shot_Clicked"
+                Text="Shot" />
+            <Image x:Name="testImage" />
+        </StackLayout>
+    </ScrollView>
 </pages:BasePage>
