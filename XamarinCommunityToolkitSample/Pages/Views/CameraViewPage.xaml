@@ -1,10 +1,17 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<pages:BasePage xmlns="http://xamarin.com/schemas/2014/forms"
-                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                xmlns:views="clr-namespace:Xamarin.CommunityToolkit.UI.Views;assembly=Xamarin.CommunityToolkit"
-                xmlns:pages="clr-namespace:Xamarin.CommunityToolkit.Sample.Pages"
-                x:Class="Xamarin.CommunityToolkit.Sample.Pages.Views.CameraViewPage">
-    <Grid>
-        <views:CameraView x:Name="cameraView" BackgroundColor="Yellow" HeightRequest="100" WidthRequest="100" CaptureOptions="Video" CameraOptions="Front" />
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<pages:BasePage
+    x:Class="Xamarin.CommunityToolkit.Sample.Pages.Views.CameraViewPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:Xamarin.CommunityToolkit.Sample.Pages"
+    xmlns:views="clr-namespace:Xamarin.CommunityToolkit.UI.Views;assembly=Xamarin.CommunityToolkit">
+    <Grid BackgroundColor="red">
+        <views:CameraView
+            x:Name="cameraView"
+            BackgroundColor="Yellow"
+            CameraOptions="Front"
+            CaptureOptions="Video"
+            HeightRequest="100"
+            WidthRequest="100" />
     </Grid>
 </pages:BasePage>
