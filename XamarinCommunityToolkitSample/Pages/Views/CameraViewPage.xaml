@@ -42,6 +42,11 @@
                 x:Name="flash"
                 IsToggled="False"
                 Toggled="flash_Toggled" />
+            <Label Text="Mirror" />
+            <Switch
+                x:Name="mirro"
+                IsToggled="False"
+                Toggled="mirro_Toggled" />
 
 
             <Button

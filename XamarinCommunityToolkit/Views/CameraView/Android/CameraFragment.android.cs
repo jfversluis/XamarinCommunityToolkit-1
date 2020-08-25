@@ -34,7 +34,9 @@ using Xamarin.Forms.Internals;
 using System.Threading.Tasks;
 using System.Linq;
 using Xamarin.Forms;
+//using Xamarin.CommunityToolkit.Internals.AndroidSpecific;
 using Xamarin.Forms.Platform.Android;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 
 namespace Xamarin.CommunityToolkit.UI.Views
 {
@@ -868,9 +870,8 @@ namespace Xamarin.CommunityToolkit.UI.Views
 			var centerX = viewRect.CenterX();
 			var centerY = viewRect.CenterY();
 			bufferRect.Offset(centerX - bufferRect.CenterX(), centerY - bufferRect.CenterY());
-
 			// return to this when we dicided how to handle with platform specifics
-			var mirror = Element.CameraOptions == CameraOptions.Front;//&& Element.OnThisPlatform().GetMirrorFrontPreview();
+			var mirror = Element.CameraOptions == CameraOptions.Front && Element.OnThisPlatform().GetMirrorFrontPreview();
 			matrix.SetRectToRect(viewRect, bufferRect, Matrix.ScaleToFit.Fill);
 			float scaleHH() => (float)viewHeight / previewSize.Height;
 			float scaleHW() => (float)viewHeight / previewSize.Width;

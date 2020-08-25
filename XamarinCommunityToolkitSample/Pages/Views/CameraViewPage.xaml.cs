@@ -4,6 +4,8 @@ using System.Runtime.InteropServices;
 using Xamarin.CommunityToolkit.Sample.Pages;
 using Xamarin.CommunityToolkit.UI.Views;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 
 namespace Xamarin.CommunityToolkit.Sample.Pages.Views
 {
@@ -55,6 +57,11 @@ namespace Xamarin.CommunityToolkit.Sample.Pages.Views
 		private void flash_Toggled(object sender, ToggledEventArgs e)
 		{
 			cameraView.FlashMode = e.Value ? CameraFlashMode.On : CameraFlashMode.Off;
+		}
+
+		private void mirro_Toggled(object sender, ToggledEventArgs e)
+		{
+			cameraView.On<Android>().SetMirrorFrontPreview(e.Value);
 		}
 	}
 }
