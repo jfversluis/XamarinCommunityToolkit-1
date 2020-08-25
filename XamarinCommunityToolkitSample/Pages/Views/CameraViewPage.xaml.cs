@@ -23,6 +23,7 @@ namespace Xamarin.CommunityToolkit.Sample.Pages.Views
 						testImage.Source = e.Image;
 						buttonShot.Text = "Shot";
 						break;
+						// See how to add media element
 					case CameraCaptureOptions.Video:
 						testImage.IsVisible = false;
 						//testMediaElement.IsVisible = true;
