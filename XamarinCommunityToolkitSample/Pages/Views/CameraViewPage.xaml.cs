@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using Xamarin.CommunityToolkit.Sample.Pages;
 using Xamarin.CommunityToolkit.UI.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration;
@@ -36,30 +33,30 @@ namespace Xamarin.CommunityToolkit.Sample.Pages.Views
 			};
 		}
 
-		private void shot_Clicked(object sender, EventArgs e)
+		void shot_Clicked(object sender, EventArgs e)
 		{
 			cameraView.Shutter();
 			buttonShot.Text = cameraView.CaptureOptions != CameraCaptureOptions.Video ? "Shot" : "Stop record";
 		}
 
-		private void zoomSlider_ValueChanged(object sender, ValueChangedEventArgs e)
+		void zoomSlider_ValueChanged(object sender, ValueChangedEventArgs e)
 		{
 			cameraView.Zoom = (float)e.NewValue;
 		}
 
-		private void isPhoto_Toggled(object sender, ToggledEventArgs e)
+		void isPhoto_Toggled(object sender, ToggledEventArgs e)
 		{
 			cameraView.CaptureOptions = e.Value ? CameraCaptureOptions.Video : CameraCaptureOptions.Photo;
 
 			buttonShot.Text = cameraView.CaptureOptions != CameraCaptureOptions.Video ? "Shot" : "Stop record";
 		}
 
-		private void flash_Toggled(object sender, ToggledEventArgs e)
+		void flash_Toggled(object sender, ToggledEventArgs e)
 		{
 			cameraView.FlashMode = e.Value ? CameraFlashMode.On : CameraFlashMode.Off;
 		}
 
-		private void mirro_Toggled(object sender, ToggledEventArgs e)
+		void mirro_Toggled(object sender, ToggledEventArgs e)
 		{
 			cameraView.On<Android>().SetMirrorFrontPreview(e.Value);
 		}
